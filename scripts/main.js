@@ -5,15 +5,15 @@ var loadingScreen = null;
 
 
 var manifest = [
-	{src:"images/scene/sun0.png", id:"sun0"},
-	{src:"images/scene/sun1.png", id:"sun1"},
-	{src:"images/scene/sun2.png", id:"sun2"},
-	{src:"images/scene/hills.png", id:"hills"},
-	{src:"images/scene/cloud-light.png", id:"cloud_light"},
-	{src:"images/scene/sky-morning.png", id:"sky_morning"},
-	{src:"images/scene/sky-noon.png", id:"sky_noon"},
-	{src:"images/scene/sky-latenoon.png", id:"sky_latenoon"},
-	{src:"images/scene/sky-night.png", id:"sky_night"}
+	{src:"images/scene/Sun0.png", id:"sun0"},
+	{src:"images/scene/Sun1.png", id:"sun1"},
+	{src:"images/scene/Sun2.png", id:"sun2"},
+	{src:"images/scene/Hills.png", id:"hills"},
+	{src:"images/scene/Cloud-light.png", id:"cloud_light"},
+	{src:"images/scene/Sky-morning.png", id:"sky_morning"},
+	{src:"images/scene/Sky-noon.png", id:"sky_noon"},
+	{src:"images/scene/Sky-latenoon.png", id:"sky_latenoon"},
+	{src:"images/scene/Sky-night.png", id:"sky_night"}
 ];
 
 // resources handlers
