@@ -12,8 +12,12 @@ function Sky(prefs){
 	sprite.addChild(sky_morning);
 	sky_morning.alpha = 0.0;
 	
-	// time of day changes sky view
-	var timeOfDay = INITIAL_TIME_OF_DAY;
+	// object to describe the condiation of the sky
+	var condition = {
+		
+		'timeOfDay':INITIAL_TIME_OF_DAY
+		
+	};
 	
 	var draw = function() {
 
@@ -33,7 +37,7 @@ function Sky(prefs){
 			newTimeOfDay = MORNING;
 		}
 		
-		if(timeOfDay !== newTimeOfDay) {
+		if(condition.timeOfDay !== newTimeOfDay) {
 			// make the proper transition (based on new timeOfDay)
 			switch(newTimeOfDay) {
 				case MORNING:
@@ -66,12 +70,13 @@ function Sky(prefs){
 				break;	
 			}
 		}
-		timeOfDay = newTimeOfDay;
+		condition.timeOfDay = newTimeOfDay;
 		
 	};
 	
 	return{
 		'sprite':sprite,
+		'condition':condition,
 		'draw':draw
 	}; 
 

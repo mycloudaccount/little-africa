@@ -78,14 +78,10 @@ function main()
 			}
 		);
 		stage.addChild(clouds[it].sprite);
-		//stage.update();
 	}
 		
 	//Update stage will render next frame
-    //createjs.Ticker.addEventListener("tick", handleTick);
-	//createjs.Ticker.addEventListener('tick', handleTick);
 	createjs.Ticker.on("tick", handleTick);
-	//tkr.tick = handleTick;
 }
 
 function handleProgress(event)

@@ -1,3 +1,4 @@
+var STAR_CNT = 30;
 var CLOUD_CNT = 10;
 var WIND_SPEED = 0.4;
 var SUN_SPEED = Math.PI * 0.0003;
