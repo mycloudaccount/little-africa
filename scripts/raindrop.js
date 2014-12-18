@@ -1,19 +1,27 @@
 function RainDrop(prefs){	
-	var sprite = window['rainDrop'].clone();
-	sprite.name = 'rainDrop-'+guid();
+	var sprite = window['raindrop'].clone();
+	sprite.name = 'raindrop-'+guid();
 	sprite.x = prefs.x;
 	sprite.y = prefs.y;
 	sprite.scaleX = prefs.sx;
 	sprite.scaleY = prefs.sy;
+	
+	var settings = {
+		
+		'alive':true
+		
+	};
 
 	var draw = function(){
 		
 		//will move by speed.
 		sprite.x += prefs.vx;
 		sprite.y += prefs.vy;
-		//will cause the object to wrap back
-		if ( sprite.x > (stage.canvas.width + sprite.image.width) || sprite.y > (stage.canvas.height + sprite.image.height) ) { 
+		//will cause the object to be detroyed
+		if ( sprite.x > (stage.canvas.width - sprite.image.width * prefs.sx) || sprite.y > (stage.canvas.height - sprite.image.height * prefs.sy) ) { 
 			stage.removeChild(sprite);
+			sprite = null;
+			settings.alive = false;
 		}
 		
 	};
@@ -27,7 +35,8 @@ function RainDrop(prefs){
 
 	return{
 		'sprite':sprite,
-		'draw':draw
+		'draw':draw,
+		'settings':settings
 	}; 
 
 }

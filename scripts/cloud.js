@@ -7,6 +7,8 @@ function Cloud(prefs){
 	sprite.scaleY = prefs.sy;
 	sprite.alpha = prefs.alpha;
 	
+	var rainDrop = null;
+	
 	var draw = function(){
 		
 		//will move by speed.
@@ -19,15 +21,31 @@ function Cloud(prefs){
 		}
 		
 		// randomly create and drop rain
-		var rainDrop = RainDrop({x:sprite.x,y:sprite.y});
+		if(rainDrop === null && Math.random() > 0.18){
+			rainDrop = RainDrop(
+				{
+					x:sprite.x + sprite.image.width * 0.5,
+					y:sprite.y + sprite.image.height,
+					vx:0,
+					vy:1,
+					sx:0.5,
+					sy:0.5
+					
+				});
+			stage.addChild(rainDrop.sprite);
+			//console.log(rainDrop.sprite.x);
+		}
 		
-		
+		if(rainDrop !== null && rainDrop.settings.alive)
+			rainDrop.draw();
+		else
+			rainDrop = null;
+			
 	};
 	
 	var handleClick = function(event)
 	{
 		console.log(sprite+' Hit!!');
-		//stage.removeChild(sprite);
 		stage.update();		
 	};	
 	sprite.addEventListener("click", handleClick);
