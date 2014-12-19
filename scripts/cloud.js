@@ -27,9 +27,9 @@ function Cloud(prefs){
 					x:sprite.x + sprite.image.width * 0.5,
 					y:sprite.y + sprite.image.height,
 					vx:0,
-					vy:1,
-					sx:0.5,
-					sy:0.5
+					vy:RAIN_SPEED,
+					sx:0.7,
+					sy:0.7
 					
 				});
 			stage.addChild(rainDrop.sprite);
