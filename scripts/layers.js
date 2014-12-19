@@ -1,0 +1,1 @@
+var precipitation = new createjs.Container();

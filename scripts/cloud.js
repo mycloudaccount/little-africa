@@ -21,6 +21,7 @@ function Cloud(prefs){
 		}
 		
 		// randomly create and drop rain
+		// add rain to precipitation layer
 		if(rainDrop === null && Math.random() > 0.18){
 			rainDrop = RainDrop(
 				{
@@ -32,8 +33,7 @@ function Cloud(prefs){
 					sy:0.7
 					
 				});
-			stage.addChild(rainDrop.sprite);
-			//console.log(rainDrop.sprite.x);
+			precipitation.addChild(rainDrop.sprite);
 		}
 		
 		if(rainDrop !== null && rainDrop.settings.alive)

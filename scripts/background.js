@@ -38,6 +38,7 @@ function Background(){
 	sprite.addChild(starsContainer);
 	sprite.addChild(sun.sprite);
 	sprite.addChild(hills);
+	
 
 	var draw = function(){
 		sun.draw();

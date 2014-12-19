@@ -9,6 +9,7 @@ var manifest = [
 	{src:"images/scene/Sun1.png", id:"sun1"},
 	{src:"images/scene/Sun2.png", id:"sun2"},
 	{src:"images/scene/Hills.png", id:"hills"},
+	{src:"images/scene/Grass.png", id:"grass"},
 	{src:"images/scene/Raindrop.png", id:"raindrop"},
 	{src:"images/scene/Cloud-light.png", id:"cloud_light"},
 	{src:"images/scene/Sky-morning.png", id:"sky_morning"},
@@ -62,7 +63,7 @@ function main()
     stage.addChild(background.sprite);
 	stage.update();
 		
-	// clouds
+	// add clouds to precipitation layer
 	var it = 0;
 	for(it=0;it<CLOUD_CNT;++it) {
 		var sizeFactor = Math.random();
@@ -78,8 +79,13 @@ function main()
 				sy: 1.0 - 0.5 * sizeFactor
 			}
 		);
-		stage.addChild(clouds[it].sprite);
+		precipitation.addChild(clouds[it].sprite);
 	}
+	stage.addChild(precipitation);
+	
+	grass.y = stage.canvas.height - grass.image.height;
+	stage.addChild(grass);
+
 		
 	//Update stage will render next frame
 	createjs.Ticker.on("tick", handleTick);

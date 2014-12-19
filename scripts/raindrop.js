@@ -19,7 +19,7 @@ function RainDrop(prefs){
 		sprite.y += prefs.vy;
 		//will cause the object to be detroyed
 		if ( sprite.x > (stage.canvas.width - sprite.image.width * prefs.sx) || sprite.y > (stage.canvas.height - sprite.image.height * prefs.sy) ) { 
-			stage.removeChild(sprite);
+			precipitation.removeChild(sprite);
 			sprite = null;
 			settings.alive = false;
 		}
