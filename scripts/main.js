@@ -2,7 +2,7 @@ var stage = null;
 var clouds = [];
 var background = null;
 var loadingScreen = null;
-
+var uma = null;
 
 var manifest = [
 	{src:"images/scene/Sun0.png", id:"sun0"},
@@ -82,7 +82,11 @@ function main()
 		precipitation.addChild(clouds[it].sprite);
 	}
 	stage.addChild(precipitation);
-	
+
+	uma = Uma({x:100,y:100});
+    stage.addChild(uma.sprite);
+	stage.update();
+
 	grass.y = stage.canvas.height - grass.image.height;
 	stage.addChild(grass);
 
