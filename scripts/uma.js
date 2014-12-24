@@ -8,10 +8,12 @@ function Uma(prefs){
 	// create the sprite sheet builder:
 	var data = {
 	    images: ["images/characters/uma/idle/uma.png"],
-	    frames: {width:120, height:120},
+	    frames: {width:60, height:87},
 	    animations: {
 	        jump:[0,23]
-	    }
+	    },
+	    framerate:12
+	    
 	};
 	var spriteSheet = new createjs.SpriteSheet(data);
 	var animation = new createjs.Sprite(spriteSheet, "run");
